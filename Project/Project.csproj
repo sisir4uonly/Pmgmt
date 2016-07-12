@@ -57,6 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\products\productDetailCtrl.js" />
+    <Content Include="app\products\productDetailView.html" />
+    <Content Include="app\products\productListView.html" />
+    <Content Include="app\welcomeView.html" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">

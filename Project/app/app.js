@@ -30,8 +30,7 @@
                .state("productDetail", {
                 url: "/products/:productId",
                 templateUrl: "app/products/productDetailView.html",
-                controller: "ProductDetailCtrl as PListVM"
-                   //productDetailCtrl  controller: "ProductDetailCtrl as PListVM"
+                controller: "ProductDetailCtrl as PListVM"                   
             })
     }]);
 }());

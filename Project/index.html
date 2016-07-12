@@ -8,9 +8,12 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
     <!-- library -->
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="Scripts/angular-resource.min.js"></script>
     <script src="Scripts/angular-mocks.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <!--Application -->
     <script src="app/app.js"></script>    
 
@@ -20,42 +23,28 @@
     <script src="common/services/productResourceMock.js"></script>
     <!--Product controller-->
     <script src="app/products/productListCtrl.js"></script>
+    <script src="app/products/productDetailCtrl.js"></script>
 </head>
 <body ng-app="productManagement">
-  <div class="panel panel-primary">
-      <div class="panel-heading">
-           List items
-      </div>
-      <div class="panel-body">
-          <table ng-controller="ProductListCtrl as PListVM" class="table">
-              <thead>
-                  <tr>
-                      <td>
-                          <button type="button" class="btn btn-primary"
-                                  ng-click="PListVM.toggleImage();">
-                              {{PListVM.showImage ? "Hide" : "Show" }} Image
-                          </button>
-                      </td>
-                      <td>Product</td>
-                      <td>Code</td>
-                      <td>Available</td>
-                      <td>Price</td>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr ng-repeat="product in PListVM.products">
-                      <td>
-                          <img ng-if="PListVM.showImage" ng-src="{{product.imageUrl}}"
-                               title="{{product.productName}}" style=" width:20px;margin:2px;" />
-                      </td>
-                      <td>{{product.productName}}</td>
-                      <td>{{product.productCode}}</td>
-                      <td>{{product.releaseDate}}</td>
-                      <td>{{product.price | currency}}</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>    
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a class="navbar-brand" ui-sref="home"> Pmgmt</a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="productList">P List</a></li>
+                    <li><a ui-sref="productEdit({productId:0})"><i class="glyphicon glyphicon-plus"></i>Add P</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div data-ui-view></div>
+    </div>
 </body>
 </html>
