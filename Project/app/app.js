@@ -30,7 +30,14 @@
                .state("productDetail", {
                 url: "/products/:productId",
                 templateUrl: "app/products/productDetailView.html",
-                controller: "ProductDetailCtrl as PListVM"                   
+                controller: "ProductDetailCtrl as PListVM",
+                resolve: {
+                    productResourceVar: "productResource",
+                    product: function (productResourceVar, $stateParams) {
+                        var productId = $stateParams.productId;
+                        return productResourceVar.get({ productId: productId }).$promise;
+                    }
+                }
             })
     }]);
 }());
