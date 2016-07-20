@@ -59,6 +59,11 @@
   <ItemGroup>
     <Content Include="app\products\productDetailCtrl.js" />
     <Content Include="app\products\productDetailView.html" />
+    <Content Include="app\products\productEditCtrl.js" />
+    <Content Include="app\products\productEditInfoView.html" />
+    <Content Include="app\products\productEditPriceView.html" />
+    <Content Include="app\products\productEditTagsView.html" />
+    <Content Include="app\products\productEditView.html" />
     <Content Include="app\products\productListView.html" />
     <Content Include="app\welcomeView.html" />
     <Content Include="Scripts\angular-ui-router.js" />
