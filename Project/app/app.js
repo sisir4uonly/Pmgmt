@@ -5,6 +5,8 @@
     var app = angular.module("productManagement",
                              ["common.services",
                               "ui.router",
+                              "ui.mask",
+                              "ui.bootstrap",
                               "productResourceMock"]);
     app.config(["$stateProvider",
                 "$urlRouterProvider",
@@ -23,6 +25,7 @@
                     controller :"ProductListCtrl as PListVM"
                 })
                .state("productEdit", {
+                   abstract: true,
                    url: "/products/edit/:productId",
                    templateUrl: "app/products/productEditView.html",
                    controller: "ProductEditCtrl as PListVM",

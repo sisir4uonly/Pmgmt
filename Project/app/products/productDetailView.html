@@ -5,42 +5,42 @@
 
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-8">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Name1:</div>
-                    <div class="col-md-6 col-sm-6">{{PListVM.product.productName}}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Name1:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{PListVM.product.productName}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Code:</div>
-                    <div class="col-md-6 col-sm-6">{{PListVM.product.productCode }}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Code:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{PListVM.product.productCode }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Description:</div>
-                    <div class="col-md-6 col-sm-6">{{PListVM.product.description }}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Description:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{PListVM.product.description }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Availability:</div>
-                    <div class="col-md-6 col-sm-6">{{PListVM.product.releaseDate|date }}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Availability:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{PListVM.product.releaseDate|date }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Cost:</div>
-                    <div class="col-md-6 col-sm-6">{{PListVM.product.cost|currency }}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Cost:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{PListVM.product.cost|currency }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Price:</div>
-                    <div class="col-md-6 col-sm-6">{{ PListVM.product.price|currency }}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Price:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{ PListVM.product.price|currency }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Margin:</div>
-                    <div class="col-md-6 col-sm-6">{{ PListVM.marginPercent | number:0}}%</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Margin:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{ PListVM.marginPercent | number:0}}%</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">Tags:</div>
-                    <div class="col-md-6 col-sm-6">{{PListVM.product.tagList}}</div>
+                    <div class="col-md-2 col-sm-3 col-xs-3">Tags:</div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">{{ PListVM.product.taglist }}</div>
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-4">
                 <img class="center-block img-responsive"
                      style="width:200px;margin:2px;"
                      ng-src="{{PListVM.product.imageUrl}}"

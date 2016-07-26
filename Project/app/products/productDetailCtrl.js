@@ -26,7 +26,7 @@
         
         PListVM.title = "Product Detail : " + PListVM.product.productName;
         if (PListVM.product.tags) {
-            PListVM.product.taglist = PListVM.product.tags.toString();
+            PListVM.product.taglist = PListVM.product.tags.toString();            
         }
     };
 })();
