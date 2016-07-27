@@ -29,7 +29,8 @@
         
         PListVM.submit = function () {
             PListVM.product.$save(function (data) {
-                toastr.success("Save Successful");
+                 toastr.success("Save Successful");
+
             });
         }
 

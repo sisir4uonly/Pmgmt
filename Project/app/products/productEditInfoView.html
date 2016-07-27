@@ -1,25 +1,31 @@
-﻿<form name="productForm" class="form-horizontal">
+﻿<form name="productForm" class="form-horizontal" novalidate>
     <fieldset>
         <legend>Basic P Information</legend>
-        <div class="form-group">
-            <label for="inputProductName" class="col-md-2 control-label" >
-                Product Name</label>
+        <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductName.$invalid}">
+            <label for="inputProductName" class="col-md-2 control-label">
+                Product Name
+            </label>
             <div class="col-md-4">
                 <input id="inputProductName"
+                       name="inputProductName"
                        type="text"
                        class="form-control"
-                       placeholder="P Name"
-                       ng-model="PListVM.product.productName" />
+                       placeholder="P Name (required)"
+                       ng-model="PListVM.product.productName"
+                       required />
             </div>
         </div>
-        <div class=" form-group">
+        <div class=" form-group"
+             ng-class="{'has-error':productForm.inputProductCode.$invalid}">
             <label class="col-md-2 control-label" for="inputProductCode">Product Code</label>
-
             <div class="col-md-4">
                 <input class="form-control"
                        id="inputProductCode"
-                       ui-mask="AAA-****"
-                       ng-model="PListVM.product.productCode" />
+                       name="inputProductCode"
+                       ui-mask="AAA-**** (required)"
+                       ng-model="PListVM.product.productCode"
+                       required />
             </div>
         </div>        
         <div class="form-group">
