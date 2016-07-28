@@ -66,6 +66,7 @@
     <Content Include="app\products\productEditView.html" />
     <Content Include="app\products\productListView.html" />
     <Content Include="app\welcomeView.html" />
+    <Content Include="common\services\productService.js" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />

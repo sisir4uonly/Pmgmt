@@ -5,28 +5,20 @@
 
     angular.module("productManagement")
            .controller("ProductDetailCtrl",
-                       ["product", ProductDetailCtrl]);
+                       ["product",
+                        "productService",
+                        ProductDetailCtrl]);
 
-    function ProductDetailCtrl(product) {
+    function ProductDetailCtrl(product, productService) {
 
         var PListVM = this;
-        PListVM.product = product;
-        //    PListVM.product = {
-        //        "productId": 2,
-        //        "productName": "Garden Cart",
-        //        "productCode": "GDN-0023",
-        //        "releaseDate": "March 18, 2010",
-        //        "description": "15 gallon capacity rolling garden cart",
-        //        "cost": 20.00,
-        //        "price": 32.99,
-        //        "category": "garden",
-        //        "tags": ["barrow", "cart", "wheelbarrow"],
-        //        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-        //};
+        PListVM.product = product;        
         
         PListVM.title = "Product Detail : " + PListVM.product.productName;
         if (PListVM.product.tags) {
             PListVM.product.taglist = PListVM.product.tags.toString();            
         }
+        PListVM.marginPercent = productService.calculateMarginPercent(PListVM.product.price,
+                                                                      PListVM.product.cost);
     };
 })();

@@ -5,13 +5,31 @@
 
     angular.module("productManagement")
             .controller("ProductEditCtrl",
-                        ["product", "$state",
-                            ProductEditCtrl]);
+                        ["product",
+                          "$state",
+                          "productService",
+                           ProductEditCtrl]);
 
-    function ProductEditCtrl(product, $state) {
+    function ProductEditCtrl(product, $state, productService) {
 
         var PListVM = this;
         PListVM.product = product;
+        PListVM.priceOption = "percent";
+        PListVM.marginPercent = function () {
+            return productService.calculateMarginPercent(PListVM.product.price
+                                                       , PListVM.product.cost);
+        };
+
+        PListVM.calculatePrice = function () {
+            var price = 0;
+            if (PListVM.priceOption == 'amount') {
+                price = productService.calculatePriceFromMarkupAmount(PListVM.product.cost, PListVM.markupAmount);
+            }
+            if (PListVM.priceOption == 'percent') {
+                price = productService.calculatePriceFromMarkupPercent(PListVM.product.cost, PListVM.markupPercent);
+            }
+            PListVM.product.price = price;
+        };
 
         if (PListVM.product && PListVM.product.productId) {
             PListVM.title = "Edit : " + PListVM.product.productName;
@@ -27,11 +45,17 @@
             PListVM.opened = !PListVM.opened;
         }
         
-        PListVM.submit = function () {
-            PListVM.product.$save(function (data) {
-                 toastr.success("Save Successful");
+        PListVM.submit = function (isValid) {
+            if (isValid) {
+                PListVM.product.$save(function (data) {
+                    toastr.success("Save Successful");
 
-            });
+                })
+            }
+            else {
+                alert('correct validation err');
+            }
+            
         }
 
         PListVM.cancel = function () {
