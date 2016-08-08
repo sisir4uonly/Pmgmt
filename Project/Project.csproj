@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\prices\priceAnalyticsCtrl.js" />
+    <Content Include="app\prices\priceAnalyticsView.html" />
     <Content Include="app\products\productDetailCtrl.js" />
     <Content Include="app\products\productDetailView.html" />
     <Content Include="app\products\productEditCtrl.js" />
@@ -71,6 +73,8 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="css\app.css" />
+    <Content Include="Scripts\angular-charts.js" />
+    <Content Include="Scripts\angular-charts.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls-0.11.0.js" />
@@ -87,6 +91,13 @@
     <Content Include="packages.config" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Scripts\d3.js" />
+    <Content Include="Scripts\d3\d3.js" />
+    <Content Include="Scripts\d3\d3.min.js" />
+    <Content Include="Scripts\d3\README.md" />
+    <Content Include="Scripts\d3\LICENSE" />
+    <Content Include="Scripts\d3\CHANGES.md" />
+    <Content Include="Scripts\d3\API.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -914,7 +925,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\prices\" />
     <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
